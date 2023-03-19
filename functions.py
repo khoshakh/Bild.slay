@@ -4,6 +4,8 @@
 
 words = ['alleles', 'biology', 'cation']   ## Just using this as a test words list
 
+def get_word(words):
+    word = random.choice(words)
 
 def my_func():
     pass
