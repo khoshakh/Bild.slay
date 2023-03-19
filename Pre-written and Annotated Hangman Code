@@ -1,0 +1,63 @@
+import random  ## This is going to allow us down the line to randomly choose a word
+from words import words  ## We need to make a separate file in the same folder that defines words as a list 
+from hangman_visual import lives_visual_dict  ## We need to make a separate file in the same folder is this hangman visual image --> The people this is from have a git hub folder with this, we can use it as inspiration and make our own. It's like an emoji guy
+import string ## Allows for certain functions and formatting but not sure of specifics
+
+##Function 1 = create a list of bio words
+##Function 2 = Import random from words
+##Function 3 = Function for selecting a random word from the list (we can rename our get_valid_words function to something like choose_word or something bc validity shouldn't be an issue)
+
+def get_valid_word(words):  ##Function 3 --> We will need to create another file with these word lists, hangman visuals, and lives visuals that we will link back to. This is what is being referenced in the beginning lines of this code block where it says "from words import words" etc. 
+    word = random.choice(words)  # randomly chooses something from the list
+    while '-' in word or ' ' in word: ## We won't need this line or the next one because we have control of our list and we can omit these issues to begin with 
+        word = random.choice(words)
+
+    return word.upper()  ## We're returning it as .upper because we want python to recognize all the letters as upper case to minimize the computer giving an error bc of capitalization
+
+
+def hangman():  ## Making the hangman game function 
+    word = get_valid_word(words)   ## word = choose_word(words)
+    word_letters = set(word)  # letters in the word
+    alphabet = set(string.ascii_uppercase)  ## Making upper case to not confuse the computer
+    used_letters = set()  # what the user has guessed ## We're setting it to be in a list
+
+    lives = 7  ## This is gonna be linked to how many body parts we give the hang man guy
+
+    # getting user input
+    while len(word_letters) > 0 and lives > 0:   ## While loop that kicks in when the first wrong guess occurs
+        # letters used
+        # ' '.join(['a', 'b', 'cd']) --> 'a b cd'
+        print('You have', lives, 'lives left and you have used these letters: ', ' '.join(used_letters))
+
+        # what current word is (ie W - R D)
+        word_list = [letter if letter in used_letters else '-' for letter in word]  ##Gives the letters that you have guessed correctly and puts them in the proper place in the word, replaces those letters you have not yet guessed correctly with a "-"
+        print(lives_visual_dict[lives]) ## This is the visual of the hangman himself. We need to create a hangman "image" (in emoticon form) and place it in another kernal within the same file so that way we can import it and call back to it like here
+        print('Current word: ', ' '.join(word_list))  ## This shows the word and the hanging man progress after the guess
+
+        user_letter = input('Guess a letter: ').upper()  ##This is prompting the user to guess a letter and then ensuring that the letter is capitalized (again, to minimize computer error)
+        if user_letter in alphabet - used_letters:  ##If their guessed letter is in the that has not been used before...
+            used_letters.add(user_letter)  ## Then it is added to the list we previously made to house the used letters (used_letters)
+            if user_letter in word_letters:   ## If their guessed letter IS in the word...
+                word_letters.remove(user_letter)  ## Then the letter is removed from the list "word_letters" which houses all the letters before they're guessed
+                print('') ## this I think is here to help with formatting in the game bc this would just print an empty line... I think it's for spacing purposes? We don't need to add it in our proposal and we can maybe add it if needed in the final code itself
+
+            else:
+                lives = lives - 1  # takes away a life if wrong
+                print('\nYour letter,', user_letter, 'is not in the word.')
+
+        elif user_letter in used_letters:  ## If they guess a letter that they previously already tried...
+            print('\nYou have already used that letter. Guess another letter.')  ## then they get this statement telling them that and they don't lose a point 
+
+        else:
+            print('\nThat is not a valid letter.')  ## If they try to guess like a number or something, they'll get this error code
+
+    # gets here when len(word_letters) == 0 OR when lives == 0
+    if lives == 0:  ## If they used up all their lives 
+        print(lives_visual_dict[lives])  ## Displays the whole hangman body 
+        print('You died, sorry. The word was', word)
+    else:
+        print('YAY! You guessed the word', word, '!!')  ## Displays if they guess all letters correctly 
+
+
+if __name__ == '__main__':    ### I think this is added in here as a way to make it accessible to the public? I don't think we'll need it, but we can figure it out when we have our final code going 
+    hangman()
