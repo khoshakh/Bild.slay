@@ -1,4 +1,4 @@
-import random  ## This is going to allow us down the line to randomly choose a word
+import random  ## This is a module that is going to allow us down the line to randomly choose a word
 from words import words  ## We need to make a separate file in the same folder that defines words as a list 
 from hangman_visual import lives_visual_dict  ## We need to make a separate file in the same folder is this hangman visual image --> The people this is from have a git hub folder with this, we can use it as inspiration and make our own. It's like an emoji guy
 import string ## Allows for certain functions and formatting but not sure of specifics
@@ -8,7 +8,7 @@ import string ## Allows for certain functions and formatting but not sure of spe
 ##Function 3 = Function for selecting a random word from the list (we can rename our get_valid_words function to something like choose_word or something bc validity shouldn't be an issue)
 
 def get_valid_word(words):  ##Function 3 --> We will need to create another file with these word lists, hangman visuals, and lives visuals that we will link back to. This is what is being referenced in the beginning lines of this code block where it says "from words import words" etc. 
-    word = random.choice(words)  # randomly chooses something from the list
+    word = random.choice(words)  # randomly chooses something from the list ## the "random." is us using the "random" module that we imported in the beginning of our code
     while '-' in word or ' ' in word: ## We won't need this line or the next one because we have control of our list and we can omit these issues to begin with 
         word = random.choice(words)
 
