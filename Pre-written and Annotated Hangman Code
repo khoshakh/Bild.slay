@@ -1,7 +1,7 @@
 import random  ## This is a module that is going to allow us down the line to randomly choose a word
 from words import words  ## We need to make a separate file in the same folder that defines words as a list 
 from hangman_visual import lives_visual_dict  ## We need to make a separate file in the same folder is this hangman visual image --> The people this is from have a git hub folder with this, we can use it as inspiration and make our own. It's like an emoji guy
-import string ## Allows for certain functions and formatting but not sure of specifics
+import string ## Allows for certain functions down the line that will allow us to specify that all letters in the hangman game are made in the same case
 
 ##Function 1 = create a list of bio words
 ##Function 2 = Import random from words
@@ -18,7 +18,7 @@ def get_valid_word(words):  ##Function 3 --> We will need to create another file
 def hangman():  ## Making the hangman game function 
     word = get_valid_word(words)   ## word = choose_word(words)
     word_letters = set(word)  # letters in the word
-    alphabet = set(string.ascii_uppercase)  ## Making upper case to not confuse the computer
+    alphabet = set(string.ascii_uppercase)  ## Making all letters upper case to not confuse the computer
     used_letters = set()  # what the user has guessed ## We're setting it to be in a list
 
     lives = 7  ## This is gonna be linked to how many body parts we give the hang man guy
