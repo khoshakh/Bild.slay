@@ -3,7 +3,7 @@ from words import words  ## We need to make a separate file in the same folder t
 from hangman_visual import lives_visual_dict  ## We need to make a separate file in the same folder is this hangman visual image --> The people this is from have a git hub folder with this, we can use it as inspiration and make our own. It's like an emoji guy
 import string ## Allows for certain functions down the line that will allow us to specify that all letters in the hangman game are made in the same case
 
-##Function 1 = create a list of bio words
+##Function 1 = create a list of bio words ##abc
 ##Function 2 = Import random from words
 ##Function 3 = Function for selecting a random word from the list (we can rename our get_valid_words function to something like choose_word or something bc validity shouldn't be an issue)
 
