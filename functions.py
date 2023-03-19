@@ -2,6 +2,9 @@
 
 ### We can put our words list in here as well as the images for hangman
 
+words = ['alleles', 'biology', 'cation']   ## Just using this as a test words list
+
+
 def my_func():
     pass
 
