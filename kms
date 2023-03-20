@@ -1,0 +1,40 @@
+Making Hangman a class
+
+
+class Hangman:
+    def __init__(self, words):
+        self.words = words
+        self.word = self.get_word() # Initializes a new word when Hangman class is called
+        self.word_letters = set(self.word)  # set of letters in the word
+        self.used_letters = set()  # empty set for letters guessed
+        self.lives = 9  # lives to start
+    
+    def get_word(self):
+        return random.choice(self.words)  # method to return a random word from the list of words
+    
+    def get_current_word(self):
+        return "".join([letter if letter in self.used_letters else '-' for letter in self.word]) # Returns word as it is guessed
+        #If the letter has been guessed it is included in the display. If not it is represented by '-'
+    
+    def guess(self, letter):
+        if letter not in self.used_letters:
+            self.used_letters.add(letter)  # adds new letter to set of used letters
+            if letter in self.word_letters:
+                self.word_letters.remove(letter)  # removes correctly guessed letter from set of word letters
+                print("Correct guess!")
+            else:
+                self.lives -= 1  # removes life for incorrect guess
+                print("Incorrect guess!")
+        else:
+            print("You've already guessed that letter!")
+    
+    def play(self):
+        while self.lives > 0 and self.word_letters:
+            print("You have", self.lives, "lives left. You guessed: ",''.join(self.used_letters))
+            print(self.get_current_word())
+            guess = input("Guess a letter: ").upper()
+            self.guess(guess)
+        if not self.word_letters:
+            print("Congratulations! You guessed the word", self.word, "with", self.lives, " lives remaining.")
+        else:
+            print("Sorry, you've run out of lives. The word was ",self.word)
