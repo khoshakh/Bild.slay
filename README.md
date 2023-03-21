@@ -6,7 +6,7 @@ The goal of the project is to create a game of hangman, where the user will gues
 ## Team Member Names & Contributions
 * Jillian Menez (A15564534) wrote the hangman_game function
 * Jovina Djulamsah (A17225420): wrote the words list and word determination function
-* Gary Taing (A16812612): coded hangman visualization and error-fixing functions
+* Gary Taing (A16812612): coded hangman visualization and help with error-fixing functions 
 
 <hr>
 
