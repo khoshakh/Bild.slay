@@ -1,0 +1,12 @@
+questions_dict = {'What is O2?':'Oxygen', 'What is H2O?':'Water'}
+
+def final_task(): 
+    final_question = random.choice(list(questions_dict.keys()))
+    answer = input(final_question).upper()
+    
+    if answer == questions_dict[final_question]:
+        print('You escaped! Good job!')
+    elif not answer.isalpha():
+        print('Guess must be in the form of a word!')
+    else:
+        print('RIP the homie...')
