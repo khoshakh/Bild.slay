@@ -11,7 +11,36 @@
 <hr>
 
 
+___________________________________
 
+## Setup 
+Run the following cell to import the necessary modules to play.
+
+# Oh no!
+
+You are a cat and you've found yourself in a sticky predicament! 
+
+You're trapped in a PI's laboratory and you need to guess his password to leave the room.
+
+The problem: If you guess the password incorrectly, a cloud of poisonous gas will fill release and fill the room!
+
+Guess the passcode one letter at a time and escape!
+
+## Rules and Hints:
+
+- The PI is a huge biology nerd and his passcode reflects it.
+
+- Once you guess a letter correctly, the letter and it's proper position will show in the Passcode region.
+
+- You can guess one letter at a time... but every wrong letter loses you one of your 9 lives! 
+
+- After 9 incorrect guesses, you lose!
+
+
+
+##### Can you escape?  (ꏿ ᆺ ꏿ) 
+
+_______________________________________________________________________________
 
 # Reflection
 
