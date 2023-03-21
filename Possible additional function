@@ -1,0 +1,49 @@
+## If the importing images doesn't work then we can maybe do something like this.
+
+def second_room(): 
+  word = random_word(words)
+  secret_letters = set(word)  # letters in the word
+  alphabet = set(string.ascii_uppercase)
+  chosen = set()  #Empty list for chosen letters
+  
+  cat_lives = 5
+
+  while len(secret_letters) > 0 and cat_lives > 0:
+        print('        ')
+        print(cat_lives, 'lives left! Past guesses: ', ' '.join(chosen))
+
+        word_so_far = [letter if letter in chosen else '-' for letter in word]
+        #print(lives_visual_dict[lives])This will be where we link to and input the cat pics
+        print('Passcode = ', ' '.join(word_so_far)) #.join concatenates a string
+
+        guess = input('Choose a letter --> ').upper() #This makes the input prompt box
+        if guess in alphabet - chosen:
+            chosen.add(guess)
+            if guess in secret_letters:
+                secret_letters.remove(guess)
+                print('Yes! Good guess, almost got it!   —ฅ/ᐠ. ̫ .ᐟ\ฅ —  ') 
+                print('        ')
+            else:
+                cat_lives = cat_lives - 1  # takes away a life if wrong
+                print('Oh no, wrong guess! Keep trying!  /ᐠ・ᆽ・ᐟ \ ')
+                print('        ')
+                print('        ')
+        elif guess in chosen:
+            print('You already guessed that letter!')
+            print('        ')
+            print('        ')
+        else:  #Error handling ; If a character not a letter, does not count guess
+            print('Invalid character detected! Must guess a letter.')
+            print('        ')
+            print('        ')
+
+    if cat_lives == 0:
+        #print visual of the cat hangman
+        print('RIP... The word was', word)
+        print('        ')
+        print(' /ᐠ｡ꞈ｡ᐟ\ ')
+    else:
+        #print(cute cat picture)
+        print('  —ฅ/ᐠ. ̫ .ᐟ\ฅ — ')
+        print('            ')
+        print('Good job! You guessed the word', word,' with', cat_lives, 'lives to spare!')
