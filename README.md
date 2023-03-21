@@ -16,6 +16,12 @@ ___________________________________
 ## Setup 
 Run the following cell to import the necessary modules to play.
 
+-CODE CELL BEGIN-
+from my_module.functions import random_word
+from my_module.functions import cat_game
+from my_module.functions import final_task
+-CODE CELL END-
+
 # Oh no!
 
 You are a cat and you've found yourself in a sticky predicament! 
@@ -36,9 +42,27 @@ Guess the passcode one letter at a time and escape!
 
 - After 9 incorrect guesses, you lose!
 
-
-
 ##### Can you escape?  (ꏿ ᆺ ꏿ) 
+
+### Run the following code to begin guessing!
+
+-CODE CELL (cat_game())-
+_______________________________________________
+### Good job on your harrowing escape!
+
+#### But...
+
+In your haste to plug in the final letter of the passcode, your fat little paw slips and you punch in the final letter incorrectly!
+
+You are faced with one saving grace task before the noxious gas is released into the room... 
+
+The passcode lock screen now reads:
+#### Answer the following security question to bypass poison cloud: 
+
+### Run the code in the next section to begin the task
+
+-CODE CELL (final_task()) -
+_____________________________________________________________________
 
 _______________________________________________________________________________
 
