@@ -5,7 +5,7 @@ The goal of the project is to create a game of hangman, where the user will gues
 
 ## Team Member Names & Contributions
 * Jillian Menez (A15564534) wrote the hangman_game function
-* Name (PID): Cleaned data & wrote script to load, etc.
+* Jovina Djulamsah (A17225420): wrote the words list and word determination function
 * Name (PID): Cleaned data & wrote script to load, etc.
 
 <hr>
@@ -72,6 +72,6 @@ _______________________________________________________________________________
 ### Jillian Menez: 
 - I enjoyed this project and I had fun with creating a silly narrative along with it. I entered this class without any prior coding experience and I did not believe that I would be able to carry out such a task by the end of the quarter. The code behind our little game is very simple, but I am really proud of how we were able to work it out and build our own game. I am more confident in my abilty to troubleshoot after this assignment as I could not just turn to google to answer my questions, I had to actively search through python-specific forums and look through others' code and resources in order to piece together the answers I needed. Our project felt so difficult when we were working through it, but the end product is so simple. It really gives me perspective to just how much more there is to learn, I haven't even scratched the surface. I enjoyed my dive into coding and I intend to continue learning python and explore other coding languages as well. 
 
-### Second Person: 
-
+### Jovina Djulamsah: 
+I enrolled into BILD62 without any coding knowledge, unaware of what to expect. I think that the functions we learned in class were extremely helpful as we worked on the project, especially loops and if statements which our project greatly consisted of. I felt nervous working on the project as I did not think I had the knowledge or skills to create such project but after working through it with my peers, I now feel more confident in my ability to code and debug errors. This project has given me the assurance that coding does not entirely rely on skills/intelligence and has helped me expand my coding knowledge. I thoroughly enjoyed my time in this class and am looking forward to using Python in the future and learning more languages.
 ### Third Person: 
