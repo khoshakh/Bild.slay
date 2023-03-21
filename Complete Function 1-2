@@ -6,6 +6,93 @@ words = ['allele', 'adaptation', 'anatomy', 'anaphase', 'anticodon', 'apoptosis'
 import random  ##This module allows us down the line to randomly choose a word
 import string ##Allows us to to change the case structure of all letters in the game
 
+'''Creating a visualization of the cat hangman that progresses depending on lives left'''
+cat={
+        0: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠxꞈxᐟ\\\n"
+        "   |       ฅ|    |ฅ\n"
+        "   |       ฅ|____|ฅ\n"
+        "   |          ꩜\n"
+        "   |\n" ),
+    1: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠxꞈxᐟ\\\n"
+        "   |       ฅ|    |ฅ\n"
+        "   |       ฅ|____|ฅ\n"
+        "   |          \n"
+        "   |\n"),
+        2: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠxꞈxᐟ\\\n"
+        "   |       ฅ|    |ฅ\n"
+        "   |        |____|ฅ\n"
+        "   |          \n"
+        "   |\n"),
+        3: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠxꞈxᐟ\\\n"
+        "   |       ฅ|    |ฅ\n"
+        "   |        |____|\n"
+        "   |          \n"
+        "   |\n"),
+        4:  (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠxꞈxᐟ\\\n"
+        "   |       ฅ|    |\n"
+        "   |        |____|\n"
+        "   |          \n"
+        "   |\n"),
+        5: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠxꞈxᐟ\\\n"
+        "   |        |    |\n"
+        "   |        |____|\n"
+        "   |          \n"
+        "   |\n"),
+        6: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠxꞈxᐟ\\\n"
+        "   |        \n"
+        "   |        \n"
+        "   |          \n"
+        "   |\n"),
+        7: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠx xᐟ\\\n"
+        "   |        \n"
+        "   |        \n"
+        "   |          \n"
+        "   |\n"),
+        8: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠ  ᐟ\\\n"
+        "   |        \n"
+        "   |        \n"
+        "   |          \n"
+        "   |\n"),
+        9: (
+        "   ___________\n"
+        "   | /        | \n"
+        "   |/       /ᐠ   \n"
+        "   |        \n"
+        "   |        \n"
+        "   |          \n"
+        "   |\n"),
+        10: (
+        "   ฅ(＾・ω・＾ฅ)"
+        )}
+
+
 '''Randomly selects a word from the generated list of biology-related words'''
 def random_word(words):
     word = random.choice(words)  # randomly chooses something from the list
@@ -27,7 +114,7 @@ def cat_game():
         print(cat_lives, 'lives left! Past guesses: ', ' '.join(chosen))
 
         word_so_far = [letter if letter in chosen else '-' for letter in word]
-        #print(lives_visual_dict[lives])This will be where we link to and input the cat pics
+        print(cat[cat_lives])
         print('Passcode = ', ' '.join(word_so_far)) #.join concatenates a string
 
         guess = input('Choose a letter --> ').upper() #This makes the input prompt box
@@ -52,15 +139,15 @@ def cat_game():
             print('        ')
 
     if cat_lives == 0:
-        #print visual of the cat hangman
+        print(cat[0])
         print('RIP... The word was', word)
         print('        ')
-        print(' /ᐠ｡ꞈ｡ᐟ\ ')
+        print(' /ᐠxꞈxᐟ\ ')
     else:
-        #print(cute cat picture)
         print('  —ฅ/ᐠ. ̫ .ᐟ\ฅ — ')
         print('            ')
         print('Good job! You guessed the word', word,' with', cat_lives, 'lives to spare!')
+
         
 ## If the importing images doesn't work then we can maybe do something like this.
 ### Below code is only to be used if images cannot be imported into precious function
