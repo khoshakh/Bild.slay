@@ -149,18 +149,19 @@ def cat_game():
         print('Good job! You guessed the word', word,' with', cat_lives, 'lives to spare!')
 
         
-## If the importing images doesn't work then we can maybe do something like this.
-### Below code is only to be used if images cannot be imported into precious function
-
-questions_dict = {'What is O2?':'Oxygen', 'What is H2O?':'Water'}
+questions_dict = {'WHAT IS O2?  ':'oxygen', 'WHAT IS H2O?  ':'water'}
 
 def final_task(): 
-    final_question = random.choice(list(questions_dict.keys()))
-    answer = input(final_question).upper()
-    
-    if answer == questions_dict[final_question]:
-        print('You escaped! Good job!')
-    elif not answer.isalpha():
-        print('Guess must be in the form of a word!')
-    else:
-        print('RIP the homie...')
+    while True:
+        random_q = random.choice(list(questions_dict.keys()))
+        random_q_answer = list(questions_dict[random_q])
+
+        answer = input(random_q).upper()
+
+        if answer == random_q_answer:
+            print('You escaped! Good job')
+        elif not answer.isalpha():
+            print('Guess must be in the form of a word!')       
+        else:
+            print('RIP the homie...')
+     
